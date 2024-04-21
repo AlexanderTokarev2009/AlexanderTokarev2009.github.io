@@ -1,0 +1,286 @@
+body {
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;    
+}
+
+#hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(background-pic.png);
+    width: 100%;
+    height: 100vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.logo {
+    width: 120px;
+}
+
+nav {
+    display: flex;
+    padding: 15px 6px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile {
+    opacity: 0;
+}
+
+li {
+    display: inline;
+    list-style: none;
+    margin: 5px 25px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    position: relative;
+}
+
+a::after {
+    content: "";
+    height: 3px;
+    background-color: #68acb6;
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: -6px;
+    transition: width 0.5s linear;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+.title {
+    text-align: center;
+    margin-top: 150px;
+}
+
+h1 {
+    font-size: 160px;
+    -webkit-text-stroke: 1px white;
+    color: transparent;
+    margin: 0;
+    background-image: linear-gradient(#fff, #fff);
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: changeColor 5s linear forwards;
+    background-position: -1000px 0;
+}
+
+@keyframes changeColor {
+    100% {
+        background-position: 0 0;
+    }
+}
+
+.action-btn {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 15px 20px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.5s linear;
+}
+
+.action-btn:hover {
+    background-color: #68acb6;
+}
+
+/* explolre */
+
+#explore {
+    margin: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+}
+
+#beaches {
+    background-image: url(beach.webp);
+}
+
+#animals {
+    background-image: url(exotic.jpg);
+}
+
+#sights {
+    background-image: url(sights.jpg);
+}
+
+#food {
+    background-image: url(food.jpg);
+}
+
+#islands {
+    background-image: url(islands.jpg);
+}
+
+.image-box {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px;
+    width: 150px;
+    margin: 0 5px;
+    color: white;
+    transition: width 1s linear;
+}
+
+.image-box p {
+    opacity: 0;
+}
+
+.image-box:hover {
+    width: 1000px;
+}
+
+.image-box:hover p {
+    opacity: 1;
+}
+
+/* contact-us */
+
+#contact-us {
+    width: 100%;
+    height: 500px;
+    background-color: #68acb6;
+    color: #fff; 
+}
+
+.text-container {
+    width: 100%;
+    text-align: center;
+    padding-top: 15px;
+}
+
+.image-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#plane {
+    height: 100px;
+    animation: fly 10s linear infinite;
+    position: relative;
+}
+
+@keyframes fly {
+    0% {
+        left: -1000px
+    }
+    100% {
+        left: 1000px;
+    }
+}
+
+#beach-clipart {
+    height: 180px;
+    position: relative;
+    top: 105px;
+}
+
+@media only screen and (max-width: 767px) {
+    nav {
+        padding: 15px 10px;
+    }
+    .mobile {
+        opacity: 1;
+        cursor: pointer;
+    }
+   .side-bar {
+        display: none;
+        width: 110px;
+        background: linear-gradient(rgba(0, 0, 0, 0.200), rgba(0, 0, 0, 0.200));
+        backdrop-filter: blur(1px);
+        padding-left: 10px;
+        margin-top: 0;
+        height: 150px;
+    }
+
+    li {
+        display: block;
+        margin: 0;
+        padding-top: 15px;
+    }
+
+    .logo {
+        width: 80px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    .action-btn {
+        padding: 5px 10px;
+        font-size: 15px;
+    }
+    
+    #explore {
+        margin: 50px 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .gallery {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+        overflow-x: auto;
+        margin-left: 0;
+        flex-shrink: 0;
+    }
+
+    .image-box {
+        width: 250px;
+    }
+
+    .image-box p {
+        opacity: 1;
+        margin-top: 400px;
+        width: 230px;
+    }
+    #contact-us {
+        height: 350px;
+    }
+
+    #contact-us h2 {
+        font-size: 30px;
+    }
+
+    #plane {
+        height: 50px;
+        top: 30px;
+    }
+
+    #beach-clipart {
+        height: 100px;
+        position: relative;
+        top: 100px;
+    }
+
+    @keyframes fly {
+        0% {
+            left: -500px
+        }
+        100% {
+            left: 500px;
+        }
+    }
+}
